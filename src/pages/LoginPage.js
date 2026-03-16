@@ -80,7 +80,7 @@ export default function LoginPage() {
         <div className="login-footer">
           <div className="login-badge">
             <span className="login-dot" />
-            Secure Portal — HP Petroleum Lucky Draw 2026
+            Secure Portal — HPCL Lucky Draw 2026
           </div>
         </div>
       </div>
