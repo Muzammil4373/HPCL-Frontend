@@ -184,11 +184,10 @@ export default function DashboardPage() {
             {events
               .filter(e => e.winner)
               .slice(-5)
-              .reverse()
               .map(e => (
                 <div key={e.eventNumber} className="winner-quick-item">
                   <div className="winner-quick-left">
-                    <span className="winner-event-tag">Event {e.eventNumber}</span>
+                    <span className="winner-event-tag">Draw {e.eventNumber}</span>
                     <span className="winner-quick-name">{e.winner.customerName}</span>
                   </div>
                   <span className="winner-quick-code">{e.winner.couponCode}</span>

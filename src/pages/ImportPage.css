@@ -109,13 +109,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 20px;
-  background: #ffffff;
+  background: #1e2357;
   box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
 .drop-zone:hover {
   border-color: rgba(27,42,74,0.5);
-  background: #f5f7fc;
+  background: #344879;
 }
 
 .drop-zone.dragging {
@@ -125,8 +125,8 @@
 }
 
 .drop-zone.has-file {
-  border-color: rgba(29,185,84,0.4);
-  background: rgba(29,185,84,0.04);
+  border-color: rgba(234, 240, 236, 0.927);
+  background: rgba(14, 38, 92, 0.952);
   cursor: default;
 }
 
@@ -136,7 +136,7 @@
   font-family: 'Rajdhani', sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #ebedf1;
+  color: #e8ebf1;
   margin-bottom: 6px;
 }
 
@@ -158,13 +158,13 @@
   gap: 4px;
 }
 
-.file-name { font-size: 16px; color: #0f1a30; font-weight: 500; }
-.file-size { font-size: 12px; color: #7a8fa8; }
+.file-name { font-size: 16px; color: #d8dbe1; font-weight: 500; }
+.file-size { font-size: 12px; color: #898e94; }
 
 .remove-file {
-  background: rgba(200,16,46,0.08);
-  border: 1px solid rgba(200,16,46,0.2);
-  color: #c8102e;
+  background: rgba(249, 243, 244, 0.594);
+  border: 1px solid rgba(15, 40, 123, 0.2);
+  color: #f3eced;
   width: 32px; height: 32px;
   border-radius: 50%;
   cursor: pointer;
