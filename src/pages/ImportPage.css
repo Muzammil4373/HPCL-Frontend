@@ -1,0 +1,270 @@
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.import-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+
+.import-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: #bbbfc7;
+}
+
+.current-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2c2f38;
+  border: 1px solid #dfe4ed;
+  border-radius: 12px;
+  padding: 12px 20px;
+  flex-shrink: 0;
+}
+
+.count-badge {
+  font-family: 'Orbitron', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: #d4a017;
+}
+
+.count-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.902);
+  text-transform: uppercase;
+}
+
+/* ─── Format Guide ───────────────────────────────────────────────────────── */
+.format-guide {
+  background: #1b2a4a;
+  border: 1px solid #6c778d;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.format-guide-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.format-icon { font-size: 18px; }
+
+.format-guide-header h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+}
+
+.columns-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.column-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  color: #d4a017;
+  letter-spacing: 0.5px;
+}
+
+.col-dot {
+  width: 5px; height: 5px;
+  background: #d4a017;
+  border-radius: 50%;
+}
+
+.format-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+
+/* ─── Drop Zone ──────────────────────────────────────────────────────────── */
+.drop-zone {
+  border: 2px dashed rgba(27,42,74,0.25);
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.drop-zone:hover {
+  border-color: rgba(27,42,74,0.5);
+  background: #f5f7fc;
+}
+
+.drop-zone.dragging {
+  border-color: #1b2a4a;
+  background: rgba(27,42,74,0.05);
+  transform: scale(1.01);
+}
+
+.drop-zone.has-file {
+  border-color: rgba(29,185,84,0.4);
+  background: rgba(29,185,84,0.04);
+  cursor: default;
+}
+
+.drop-icon { font-size: 48px; margin-bottom: 16px; }
+
+.drop-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ebedf1;
+  margin-bottom: 6px;
+}
+
+.drop-sub { font-size: 13px; color: #7a8fa8; }
+
+.file-selected {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.file-icon { font-size: 40px; }
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 4px;
+}
+
+.file-name { font-size: 16px; color: #0f1a30; font-weight: 500; }
+.file-size { font-size: 12px; color: #7a8fa8; }
+
+.remove-file {
+  background: rgba(200,16,46,0.08);
+  border: 1px solid rgba(200,16,46,0.2);
+  color: #c8102e;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.remove-file:hover { background: rgba(200,16,46,0.15); }
+
+/* ─── Actions ────────────────────────────────────────────────────────────── */
+.import-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* ─── Result ─────────────────────────────────────────────────────────────── */
+.import-result {
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.import-result.success {
+  background: #ffffff;
+  border: 1.5px solid rgba(29,185,84,0.3);
+  box-shadow: 0 2px 12px rgba(29,185,84,0.08);
+}
+
+.import-result.error {
+  background: #ffffff;
+  border: 1.5px solid rgba(200,16,46,0.25);
+  box-shadow: 0 2px 12px rgba(200,16,46,0.06);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.result-icon { font-size: 20px; }
+.result-message { font-size: 14px; color: #0f1a30; font-weight: 500; }
+
+.result-stats {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.result-stat { display: flex; flex-direction: column; gap: 4px; }
+
+.rstat-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1b2a4a;
+}
+
+.rstat-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #7a8fa8;
+  text-transform: uppercase;
+}
+
+.result-errors { display: flex; flex-direction: column; gap: 4px; }
+.error-title { font-size: 12px; font-weight: 600; color: #c8102e; margin-bottom: 4px; }
+.error-item  { font-size: 12px; color: #7a8fa8; }
+
+/* ─── Sample Hint ────────────────────────────────────────────────────────── */
+.sample-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #1b2a4a;
+  border: 1px solid #0f1a30;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+.sample-hint code {
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  color: #d4a017;
+  background: rgba(212,160,23,0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.sample-hint strong { color: #ffffff; }
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .import-actions { flex-direction: column; align-items: stretch; }
+  .import-actions .btn { max-width: 100% !important; }
+  .drop-zone { padding: 40px 20px; }
+}

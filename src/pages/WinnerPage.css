@@ -1,0 +1,392 @@
+/* ─── Full page ──────────────────────────────────────────────────────────── */
+.winner-page {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 20px;
+  z-index: 200;
+}
+
+.winner-page-bg {
+  position: fixed; inset: 0;
+  background-image: url('../assets/HP-Pump.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.winner-page-overlay {
+ position: fixed; inset: 0;
+  background: transparent;
+  z-index: 1;
+}
+
+.winner-page-overlay.grand {
+  background: linear-gradient(135deg,
+    rgba(30,5,5,0.88) 0%,
+    rgba(60,10,10,0.85) 100%);
+}
+
+/* ─── Floating particles ─────────────────────────────────────────────────── */
+.wp-particles { position: fixed; inset: 0; pointer-events: none; z-index: 2; overflow: hidden; }
+.wp-particle {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  animation: wp-float 3s ease-in-out infinite;
+}
+.wpp1  { top:5%;  left:5%;   background:#d4a017; animation-delay:0s; }
+.wpp2  { top:10%; right:8%;  background:#1b2a4a; animation-delay:0.3s; }
+.wpp3  { top:3%;  left:45%;  background:#1db954; animation-delay:0.6s; }
+.wpp4  { top:20%; left:2%;   background:#f0c040; animation-delay:0.9s; }
+.wpp5  { bottom:20%;right:4%;background:#d4a017; animation-delay:1.2s; }
+.wpp6  { top:35%; left:3%;   background:#1db954; animation-delay:0.4s; }
+.wpp7  { top:50%; right:3%;  background:#f0c040; animation-delay:0.7s; }
+.wpp8  { top:70%; left:25%;  background:#1b2a4a; animation-delay:1.0s; }
+.wpp9  { top:15%; left:20%;  background:#ffd700; animation-delay:0.2s; }
+.wpp10 { top:60%; right:20%; background:#1db954; animation-delay:1.4s; }
+.wpp11 { bottom:25%;left:45%;background:#d4a017; animation-delay:0.8s; }
+.wpp12 { top:40%; right:15%; background:#f0c040; animation-delay:1.6s; }
+.wpp13 { top:25%; left:32%;  background:#4a7aff; animation-delay:0.5s; }
+.wpp14 { bottom:12%;right:32%;background:#ffd700;animation-delay:1.1s;}
+.wpp15 { top:80%; left:10%;  background:#d4a017; animation-delay:1.8s; }
+.wpp16 { top:88%; right:10%; background:#1db954; animation-delay:2.1s; }
+
+@keyframes wp-float {
+  0%,100% { transform: translateY(0) scale(1);       opacity: 0.5; }
+  50%     { transform: translateY(-24px) scale(1.7);  opacity: 1; }
+}
+
+/* ─── Countdown ──────────────────────────────────────────────────────────── */
+.wp-countdown {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.wp-countdown-rings {
+  position: relative;
+  width: 220px; height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wc-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid transparent;
+}
+.wcr1 {
+  width: 200px; height: 200px;
+  border-top-color: #d4a017;
+  border-right-color: rgba(212,160,23,0.2);
+  animation: spin 1s linear infinite;
+}
+.wcr2 {
+  width: 155px; height: 155px;
+  border-top-color: #1b2a4a;
+  border-left-color: rgba(27,42,74,0.25);
+  animation: spin 0.7s linear infinite reverse;
+}
+.wcr3 {
+  width: 110px; height: 110px;
+  border-top-color: #1db954;
+  border-right-color: rgba(29,185,84,0.2);
+  animation: spin 1.4s linear infinite;
+}
+
+.wp-countdown-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.wp-count-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 88px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(212,160,23,0.6);
+  animation: countPop 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: block;
+}
+
+@keyframes countPop {
+  0%   { transform: scale(0.3); opacity: 0; }
+  65%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+.wp-count-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  animation: pulse 0.9s ease-in-out infinite;
+}
+
+.wp-event-tag {
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #d4a017;
+  text-transform: uppercase;
+}
+
+/* ─── Result card ────────────────────────────────────────────────────────── */
+.wp-result {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+  margin: auto;
+}
+
+/* Gradient top bar */
+.wp-result::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #0f1a30, #1b2a4a, #d4a017, #f0c040);
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.wp-header {
+  background: linear-gradient(135deg, #0f1a30, #1b2a4a);
+  padding: 40px 36px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.wp-fireworks { font-size: 60px; animation: bounce 0.6s cubic-bezier(0.175,0.885,0.32,1.275); }
+
+@keyframes bounce {
+  from { transform: scale(0) rotate(-180deg); }
+  to   { transform: scale(1) rotate(0deg); }
+}
+
+.wp-congrats {
+  font-family: 'Orbitron', monospace;
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #d4a017, #fff 50%, #f0c040);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2.5s linear infinite;
+}
+
+.wp-divider {
+  width: 80px; height: 2px;
+  background: linear-gradient(90deg, transparent, #d4a017, transparent);
+}
+
+.wp-event-badge {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+/* ─── Coupon code ────────────────────────────────────────────────────────── */
+.wp-coupon-box {
+  padding: 24px 36px;
+  background: #f7f9fc;
+  border-bottom: 1px solid rgba(27,42,74,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.wp-coupon-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #7a8fa8;
+  text-transform: uppercase;
+}
+
+.wp-coupon-code {
+  font-family: 'Orbitron', monospace;
+  font-size: 34px;
+  font-weight: 900;
+  color: #1b2a4a;
+  letter-spacing: 5px;
+  padding: 14px 28px;
+  background: #fff;
+  border: 2px solid rgba(212,160,23,0.35);
+  border-radius: 14px;
+  box-shadow: 0 0 24px rgba(212,160,23,0.18);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* ─── Details grid ───────────────────────────────────────────────────────── */
+.wp-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(27,42,74,0.06);
+  border-bottom: 1px solid rgba(27,42,74,0.08);
+}
+
+.wp-detail-card {
+  background: #fff;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wp-detail-wide { grid-column: span 2; }
+
+.wp-detail-icon { font-size: 20px; flex-shrink: 0; }
+
+.wp-detail-card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wp-detail-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #7a8fa8;
+  text-transform: uppercase;
+}
+
+.wp-detail-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f1a30;
+}
+
+/* ─── Prize ──────────────────────────────────────────────────────────────── */
+.wp-prize-box {
+  padding: 28px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: rgba(212,160,23,0.04);
+  border-bottom: 1px solid rgba(212,160,23,0.15);
+}
+
+.grand-prize-box {
+  background: rgba(200,16,46,0.04);
+  border-bottom-color: rgba(200,16,46,0.15);
+  animation: grand-glow 2s ease-in-out infinite;
+}
+
+@keyframes grand-glow {
+  0%,100% { box-shadow: inset 0 0 30px rgba(200,16,46,0.05); }
+  50%     { box-shadow: inset 0 0 60px rgba(200,16,46,0.12); }
+}
+
+.wp-prize-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #7a8fa8;
+}
+
+.wp-prize-name {
+  font-family: 'Orbitron', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #8a6000;
+  background: rgba(212,160,23,0.1);
+  padding: 8px 24px;
+  border-radius: 24px;
+  border: 1.5px solid rgba(212,160,23,0.3);
+  letter-spacing: 1px;
+}
+
+.prize-grand {
+  color: #c8102e;
+  background: rgba(200,16,46,0.08);
+  border-color: rgba(200,16,46,0.25);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.wp-prize-img-wrap {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212,160,23,0.2);
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+}
+
+.wp-prize-img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  display: block;
+  padding: 10px;
+}
+
+/* ─── Close button ───────────────────────────────────────────────────────── */
+.wp-close-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #0f1a30, #1b2a4a);
+  border: none;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.wp-close-btn:hover {
+  background: linear-gradient(135deg, #1b2a4a, #2a3d6a);
+  box-shadow: 0 0 20px rgba(27,42,74,0.4);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .wp-result { border-radius: 20px; }
+  .wp-header { padding: 32px 24px 24px; }
+  .wp-congrats { font-size: 22px; }
+  .wp-coupon-code { font-size: 24px; letter-spacing: 3px; padding: 12px 18px; }
+  .wp-details-grid { grid-template-columns: 1fr; }
+  .wp-detail-wide { grid-column: span 1; }
+  .wp-count-num { font-size: 68px; }
+  .wp-prize-img { max-height: 170px; }
+  .wp-coupon-box, .wp-prize-box { padding: 20px 20px; }
+  .wp-detail-card { padding: 14px 20px; }
+}

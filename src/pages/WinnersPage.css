@@ -1,0 +1,251 @@
+.winners-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+.winners-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: #f6f6f6;
+}
+
+.winners-count {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  background: rgba(232,160,32,0.08);
+  border: 1.5px solid rgba(232,160,32,0.2);
+  border-radius: 12px;
+  padding: 12px 20px;
+  flex-shrink: 0;
+}
+
+.count-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: #8a6000;
+}
+
+.count-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  color: #bfc5cc;
+}
+
+.no-winners {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 20px;
+  padding: 80px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.no-winners-icon { font-size: 60px; }
+.no-winners h2 { font-family: 'Orbitron', monospace; font-size: 22px; color: #7a8fa8; }
+.no-winners p  { color: #7a8fa8; margin-bottom: 8px; }
+
+/* Table */
+.winners-table-wrap {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.winners-table { width: 100%; border-collapse: collapse; }
+
+.winners-table th {
+  background: #f5f7fc;
+  padding: 14px 16px;
+  text-align: left;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7a8fa8;
+  border-bottom: 1.5px solid rgba(27,42,74,0.1);
+  white-space: nowrap;
+}
+
+.winners-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  animation: fadeInUp 0.4s ease both;
+}
+
+.winners-table tr:last-child td { border-bottom: none; }
+.winners-table tbody tr:hover td { background: #f5f7fc; }
+
+.event-cell { display: flex; flex-direction: column; align-items: center; }
+
+.event-cell-num {
+  font-family: 'Orbitron', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1b2a4a;
+}
+
+.event-cell-label {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #7a8fa8;
+  text-transform: uppercase;
+}
+
+.coupon-cell {
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #8a6000;
+  letter-spacing: 1.5px;
+  background: rgba(232,160,32,0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.name-cell    { font-size: 14px; color: #0f1a30; font-weight: 500; }
+.vehicle-cell { font-size: 13px; color: #3a4f6e; font-family: 'Rajdhani', sans-serif; font-weight: 600; letter-spacing: 0.5px; }
+.phone-cell   { font-size: 13px; color: #3a4f6e; }
+.date-cell    { font-size: 12px; color: #7a8fa8; white-space: nowrap; }
+.pump-cell    { font-size: 12px; color: #7a8fa8; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.prize-badge-cell {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Completion grid */
+.completion-grid {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.event-dots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 8px;
+}
+
+.event-dot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fc;
+  border: 1px solid rgba(27,42,74,0.08);
+  border-radius: 10px;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.event-dot span {
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  color: #c8a0b0;
+}
+
+.event-dot.dot-won {
+  background: rgba(232,160,32,0.07);
+  border-color: rgba(232,160,32,0.25);
+}
+.event-dot.dot-won span { color: #8a6000; }
+.event-dot:hover { transform: scale(1.05); }
+
+.dot-check {
+  position: absolute;
+  top: 4px; right: 6px;
+  font-size: 9px;
+  color: #1db954;
+  font-weight: bold;
+}
+
+/* Prize legend */
+.prize-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.legend-item { display: flex; align-items: center; gap: 7px; }
+
+.legend-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7a8fa8;
+  letter-spacing: 0.5px;
+}
+
+/* ─── Export Button ──────────────────────────────────────────────────────── */
+.btn-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1b6b1b, #1db954);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 16px rgba(29,185,84,0.25);
+}
+
+.btn-export:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(29,185,84,0.45);
+}
+
+.btn-export:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.export-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
